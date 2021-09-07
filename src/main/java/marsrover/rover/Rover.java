@@ -3,6 +3,7 @@ package marsrover.rover;
 
 import marsrover.command.ICommand;
 import marsrover.direction.IDirection;
+import marsrover.exceptions.InvalideCoordinateException;
 import marsrover.exceptions.RoverOutOfBoundsException;
 import marsrover.landingsurface.Plateau;
 import marsrover.landingsurface.Point;
@@ -16,8 +17,9 @@ public class Rover {
     private IDirection direction;
 
     public Rover(Plateau plateau, int coordinateX, int coordinateY, IDirection direction) {
-        if (plateau == null) throw new NullPointerException("The Plateau you create the Rover in cannot be null!");
-        if (direction == null) throw new NullPointerException("The Direction the Rover is facing in cannot be null!");
+        if (coordinateX<0||coordinateY<0) throw new InvalideCoordinateException();
+        if (plateau == null) throw new NullPointerException("The plateau can't be null");
+        if (direction == null) throw new NullPointerException("The direction can't be null");
 
         this.plateau = plateau;
         this.coordinates.setX(coordinateX);
@@ -83,7 +85,8 @@ public class Rover {
         if (this.getCoordinateX() > this.getPlateau().getUpperBoundCoordinateX()
                 || this.getCoordinateY() > this.getPlateau().getUpperBoundCoordinateY()
                 || this.getCoordinateX() < this.getPlateau().getLowerBoundCoordinateX()
-                || this.getCoordinateY() < this.getPlateau().getLowerBoundCoordinateY())
+                || this.getCoordinateY() < this.getPlateau().getLowerBoundCoordinateY()
+        )
             throw new RoverOutOfBoundsException();
     }
 }

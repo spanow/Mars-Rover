@@ -18,7 +18,7 @@ public class MoveForwardCommandTest extends BaseTest {
     }
 
     @Test
-    public void whenMoveForwardCommandIsExecutedRoverMovesForward() {
+    public void whenMoveForwardCommandIsExecutedRoverMovesForward(){
         command.execute(rover);
         assertEquals(++yCoordinate, rover.getCoordinateY());
     }

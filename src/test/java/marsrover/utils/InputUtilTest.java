@@ -20,7 +20,7 @@ public class InputUtilTest extends BaseTest {
 
     @Test
     public void inputStringsCanBeParsedFromFile() throws Exception {
-        InputStream testFileInputStream = getClass().getResourceAsStream("/testInput.txt");
+        InputStream testFileInputStream = getClass().getResourceAsStream("/Input.txt");
         String expectedInputStringOne = "5 5";
         String expectedInputStringTwo = "1 2 N";
         String expectedInputStringThree = "LMLMLMLMM";

@@ -1,8 +1,9 @@
-package marsrover.rover;
+package marsrover.exceptions;
 
 import marsrover.BaseTest;
 import marsrover.direction.NorthDirection;
 import marsrover.exceptions.RoverOutOfBoundsException;
+import marsrover.rover.Rover;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,10 +25,6 @@ public class RoverExceptionTest extends BaseTest {
         new Rover(plateau, xCoordinate, yCoordinate, null);
     }
 
-    @Test(expected = RoverOutOfBoundsException.class)
-    public void whenRoverIsCreatedOutOfPlateauBoundsExceptionIsThrown() {
-        new Rover(plateau, -1, 6, direction);
-    }
 
     @Test(expected = RoverOutOfBoundsException.class)
     public void whenRoverMovesOutOfNorthBoundsExceptionIsThrown() {

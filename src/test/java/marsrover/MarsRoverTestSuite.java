@@ -8,8 +8,11 @@ import marsrover.direction.EastDirectionTest;
 import marsrover.direction.NorthDirectionTest;
 import marsrover.direction.SouthDirectionTest;
 import marsrover.direction.WestDirectionTest;
+import marsrover.exceptions.InvalideCoordinateExceptionTest;
 import marsrover.landingsurface.PlateauTest;
-import marsrover.rover.RoverExceptionTest;
+import marsrover.exceptions.RoverExceptionTest;
+import marsrover.landingsurface.Point;
+import marsrover.landingsurface.PointTest;
 import marsrover.rover.RoverTest;
 import marsrover.utils.InputUtilTest;
 import org.junit.runner.RunWith;
@@ -27,7 +30,9 @@ import org.junit.runners.Suite;
         RoverTest.class,
         RoverExceptionTest.class,
         InputUtilTest.class,
-        PlateauTest.class
+        PlateauTest.class,
+        PointTest.class,
+        InvalideCoordinateExceptionTest.class
 })
 public class MarsRoverTestSuite extends BaseTest {
 
