@@ -14,6 +14,8 @@ import org.junit.Test;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import static marsrover.utils.Constants.BASE_COORDINATE_X;
+import static marsrover.utils.Constants.BASE_COORDINATE_Y;
 import static org.junit.Assert.assertEquals;
 
 public class InputUtilTest extends BaseTest {
@@ -41,8 +43,8 @@ public class InputUtilTest extends BaseTest {
         String plateauInput = "5 5";
         Plateau plateauOutput = InputUtil.parsePlateauInput(plateauInput);
 
-        assertEquals(0, plateauOutput.getLowerBoundCoordinateX());
-        assertEquals(0, plateauOutput.getLowerBoundCoordinateY());
+        assertEquals(BASE_COORDINATE_X, plateauOutput.getLowerBoundCoordinateX());
+        assertEquals(BASE_COORDINATE_Y, plateauOutput.getLowerBoundCoordinateY());
         assertEquals(5, plateauOutput.getUpperBoundCoordinateX());
         assertEquals(5, plateauOutput.getUpperBoundCoordinateY());
     }
