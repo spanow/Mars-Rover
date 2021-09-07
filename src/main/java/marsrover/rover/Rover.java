@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 public class Rover {
 
-    private final Plateau plateau;
-    private Point coordinates = new Point(0,0);
+    private Plateau plateau;
+    private Point coordinates = new Point();
     private IDirection direction;
 
     public Rover(Plateau plateau, int coordinateX, int coordinateY, IDirection direction) {
@@ -24,6 +24,17 @@ public class Rover {
         this.plateau = plateau;
         this.coordinates.setX(coordinateX);
         this.coordinates.setY(coordinateY);
+        this.direction = direction;
+        validateLocation();
+    }
+    public Rover(Plateau plateau,Point point, IDirection direction) {
+        if (point.getX()<0||point.getY()<0) throw new InvalideCoordinateException();
+        if (plateau == null) throw new NullPointerException("The plateau can't be null");
+        if (direction == null) throw new NullPointerException("The direction can't be null");
+
+        this.plateau = plateau;
+        this.coordinates.setX(point.getX());
+        this.coordinates.setY(point.getY());
         this.direction = direction;
         validateLocation();
     }

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class InputUtil {
 
     public static ArrayList<String> parseInputFromFile(InputStream fileLocation) throws IOException {
+
         ArrayList<String> inputsFromFile = new ArrayList<>();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileLocation));
         String fileLine;
@@ -31,18 +32,15 @@ public class InputUtil {
 
     public static Plateau parsePlateauInput(String plateauInput) {
         String[] inputArray = plateauInput.split(" ");
-        int plateauUpperBoundCoordinateX = Integer.parseInt(inputArray[0]);
-        int plateauUpperBoundCoordinateY = Integer.parseInt(inputArray[1]);
-        Point upperBound = new Point(plateauUpperBoundCoordinateX,plateauUpperBoundCoordinateY);
+        Point upperBound = new Point(Integer.parseInt(inputArray[1]),Integer.parseInt(inputArray[1]));
         return new Plateau(upperBound);
     }
 
     public static Rover parsePositionInput(String positionInput, Plateau plateau) {
         String[] inputArray = positionInput.split(" ");
-        int roverLandingCoordinateX = Integer.parseInt(inputArray[0]);
-        int roverLandingCoordinateY = Integer.parseInt(inputArray[1]);
+        Point point = new Point(Integer.parseInt(inputArray[0]),Integer.parseInt(inputArray[1]));
         IDirection direction = DirectionEnum.valueOf(inputArray[2]).getDirection();
-        return new Rover(plateau, roverLandingCoordinateX, roverLandingCoordinateY, direction);
+        return new Rover(plateau,point, direction);
     }
 
     public static ArrayList<ICommand> parseCommandInput(String command) {
