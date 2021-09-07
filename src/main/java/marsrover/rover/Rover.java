@@ -3,6 +3,7 @@ package marsrover.rover;
 
 import marsrover.command.ICommand;
 import marsrover.direction.IDirection;
+import marsrover.exceptions.RoverOutOfBoundsException;
 import marsrover.landingsurface.Plateau;
 import marsrover.landingsurface.Point;
 

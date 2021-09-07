@@ -2,6 +2,7 @@ package marsrover.rover;
 
 import marsrover.BaseTest;
 import marsrover.direction.NorthDirection;
+import marsrover.exceptions.RoverOutOfBoundsException;
 import org.junit.Before;
 import org.junit.Test;
 

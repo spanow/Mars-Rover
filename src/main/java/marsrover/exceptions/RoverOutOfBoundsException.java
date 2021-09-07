@@ -1,6 +1,6 @@
-package marsrover.rover;
+package marsrover.exceptions;
 
-class RoverOutOfBoundsException extends RuntimeException {
+public class RoverOutOfBoundsException extends RuntimeException {
 
     public RoverOutOfBoundsException() {
         super("The Rover cannot be out of bounds of the plateau!");
