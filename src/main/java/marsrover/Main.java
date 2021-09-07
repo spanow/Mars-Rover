@@ -13,7 +13,7 @@ class Main {
 
     public static void main(String[] args) throws IOException {
 
-        ArrayList<String> inputFileAsList = InputUtil.parseInputFromFile(Main.class.getResourceAsStream("/input.txt"));
+        ArrayList<String> inputFileAsList = InputUtil.parseInputFromFile(Main.class.getResourceAsStream(args[0]));
         // The first instruction is separated out, as this is for creating the Plateau, which is global for all Rovers
         List<String> roverInput = inputFileAsList.subList(1, inputFileAsList.size());
 
@@ -23,6 +23,8 @@ class Main {
 
         System.out.println("\n" + "Output:" + "\n");
         Plateau plateau = InputUtil.parsePlateauInput(inputFileAsList.get(0));
+
+
         // Subsequent pairs of instructions are used to create a Rover and a set of Commands
         // We then run the set of Commands on that Rover and repeat this for the next pair of instructions
         for (int i = 0; i < roverInput.size(); i += 2) {
